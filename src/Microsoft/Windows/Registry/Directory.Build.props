@@ -1,0 +1,19 @@
+<Project>
+  <!-- Check https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build for details -->
+
+  <PropertyGroup>
+    <Authors>DarkCreekWay (https://github.com/DarkCreekWay)</Authors>
+    <Copyright>Copyright © DarkCreekWay 2020</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>DarkCreekWay's Operating System Integration Framework</Product>
+  </PropertyGroup>
+
+  <!-- Enforce XML comments on public members on common projects (excluding MSTest projects)-->
+  <PropertyGroup Condition="'$(MSBuildProjectName.EndsWith(`.MSTest`))'=='false'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarningsAsErrors>;NU1605;CS1591</WarningsAsErrors>
+  </PropertyGroup>
+
+</Project>

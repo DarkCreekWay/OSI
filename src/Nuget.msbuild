@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+
+  <Target Name="PackReleaseBuildOnly" BeforeTargets="GenerateNuspec">
+    <Error Text="Use 'Release' configuration when creating a nuget package" Condition="'$(Configuration)' != 'Release'" />
+  </Target>
+
+  <Target Name="PushNuGetPackage" AfterTargets="GenerateNuspec" Condition="'$(Configuration)' == 'Release'">
+      <Exec WorkingDirectory="$(PackageOutputPath)" Command="nuget.exe add $(PackageId).$(Version).nupkg -Source \\caprica\nuget"></Exec>
+  </Target>
+
+  <Target Name ="CleanupLocalNugetPackages" AfterTargets="Clean" Condition = "Exists('$(PackageOutputPath)')" >
+    <RemoveDir Directories="$(PackageOutputPath)" ContinueOnError="WarnAndContinue"/>
+  </Target>
+
+</Project>
