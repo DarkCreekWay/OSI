@@ -245,3 +245,4 @@ dotnet_naming_style.begins_with_s_.capitalization = pascal_case
 # Code quality rules
 
 dotnet_code_quality.CA1712.enum_values_prefix_trigger = AnyEnumValue:error
+dotnet_style_prefer_conditional_expression_over_return = false
