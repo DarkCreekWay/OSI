@@ -23,3 +23,7 @@ No packages available yet.
 ## OSI for Mac
 
 No packages available yet.
+
+---
+
+Copyright (c) 2020 by [DarkCreekWay](https://github.com/DarkCreekWay)

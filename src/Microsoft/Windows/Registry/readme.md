@@ -9,3 +9,7 @@ The packages are easy to integrate into existing projects with minimum effort.
 
 As a bonus, you also get a set of extension methods that simplify and streamline
 your work.
+
+---
+
+Copyright (c) 2020 by [DarkCreekWay](https://github.com/DarkCreekWay)
