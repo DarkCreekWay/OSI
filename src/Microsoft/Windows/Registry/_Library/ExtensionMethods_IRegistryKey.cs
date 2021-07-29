@@ -28,9 +28,9 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry {
 
             bool result = true;
 
-            using ( IRegistryKey key = registryKey.OpenSubKey( subKey ) ) {
+            using( IRegistryKey key = registryKey.OpenSubKey( subKey ) ) {
 
-                if ( null == key ) {
+                if( null == key ) {
                     return true;
                 }
 

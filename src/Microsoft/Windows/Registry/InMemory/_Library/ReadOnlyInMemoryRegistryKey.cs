@@ -105,8 +105,26 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
         /// <inheritdoc/>
         public void DeleteValue( string name, bool throwOnMissingValue ) => throw new UnauthorizedAccessException( "Registry Key is not writable" );
 
+        bool _disposed = false;
+
         /// <inheritdoc/>
         public void Dispose() {
+            Dispose( true );
+            GC.SuppressFinalize( this );
+        }
+
+        /// <inheritdoc/>
+        protected virtual void Dispose( bool disposing ) {
+
+            if( _disposed ) {
+                return;
+            }
+
+            if( disposing ) {
+                // Free managed resources
+            }
+
+            _disposed = true;
         }
 
         [DebuggerBrowsable( DebuggerBrowsableState.Never )]

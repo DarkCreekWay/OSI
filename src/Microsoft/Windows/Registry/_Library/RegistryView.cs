@@ -11,12 +11,13 @@
     /// <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.win32.registryview">Registry View - Microsoft Docs</a>
     /// <a href="https://source.dot.net/#Microsoft.Win32.Registry/Microsoft/Win32/RegistryView.cs">RegistryView.cs - .NET Core Source</a>
     /// </remarks>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage( "Design", "CA1027:Mark enums with FlagsAttribute" )]
     public enum RegistryView {
 
         /// <summary>
         /// The default view.
         /// </summary>
-        Default    = 0x0000,
+        Default = 0x0000,
 
         /// <summary>
         /// The 32-bit view.

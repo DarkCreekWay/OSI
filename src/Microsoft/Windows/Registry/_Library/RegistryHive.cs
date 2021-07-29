@@ -12,22 +12,22 @@
         /// <summary>
         /// Represents the HKEY_CLASSES_ROOT base key.
         /// </summary>
-        ClassesRoot     = unchecked((int)0x80000000),
+        ClassesRoot = unchecked((int)0x80000000),
 
         /// <summary>
         /// Represents the HKEY_CURRENT_USER base key.
         /// </summary>
-        CurrentUser     = unchecked((int)0x80000001),
+        CurrentUser = unchecked((int)0x80000001),
 
         /// <summary>
         /// Represents the HKEY_LOCAL_MACHINE base key.
         /// </summary>
-        LocalMachine    = unchecked((int)0x80000002),
+        LocalMachine = unchecked((int)0x80000002),
 
         /// <summary>
         /// Represents the HKEY_USERS base key.
         /// </summary>
-        Users           = unchecked((int)0x80000003),
+        Users = unchecked((int)0x80000003),
 
         /// <summary>
         /// Represents the HKEY_PERFORMANCE_DATA base key.
@@ -37,7 +37,7 @@
         /// <summary>
         /// Represents the HKEY_CURRENT_CONFIG base key.
         /// </summary>
-        CurrentConfig   = unchecked((int)0x80000005),
+        CurrentConfig = unchecked((int)0x80000005),
     }
 }
 

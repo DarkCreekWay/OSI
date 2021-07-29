@@ -10,8 +10,8 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
         [TestMethod]
         public void InMemoryRegistryKey_Values_Properties_and_Methods() {
 
-            IRegistry registry = new InMemoryRegistry(RegistryView.Registry64);
-            IRegistryKey hklm = registry.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
+            IRegistry registry = new InMemoryRegistry( RegistryView.Registry64 );
+            IRegistryKey hklm = registry.OpenBaseKey( RegistryHive.LocalMachine, RegistryView.Default );
 
             // ValueCount Property - before adding/setting a value
             Assert.AreEqual( 0, hklm.ValueCount );
@@ -32,11 +32,11 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
             // GetValue Methods
 
             // Accessing non-existant value returns null
-            object regVal01 = hklm.GetValue( "Non-Existant-Registry-Value-should-return-null");
+            object regVal01 = hklm.GetValue( "Non-Existant-Registry-Value-should-return-null" );
             Assert.IsNull( regVal01 );
 
             // Accessing existing value with different casing returns correct value. Registry Value Names are case-insensitive
-            object regVal02 = hklm.GetValue( "myfirstvalue");
+            object regVal02 = hklm.GetValue( "myfirstvalue" );
             Assert.AreEqual( regVal02, "Some meaningful value" );
 
             // Update stored value with new value and retrieve it
@@ -45,22 +45,19 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
 
             hklm.DeleteValue( "myfirstvalue" );
             Assert.AreEqual( 0, hklm.ValueCount );
-            ;
-
 
             // Default Value handling
 
             hklm.SetValue( "", "", RegistryValueKind.String );
             Assert.AreEqual( "", hklm.GetValue( null ) );
-            ;
 
         }
 
         [TestMethod]
         public void InMemoryRegistryKey_SetValues_DetectValueKind() {
-            IRegistry registry = new InMemoryRegistry(RegistryView.Registry64);
+            IRegistry registry = new InMemoryRegistry( RegistryView.Registry64 );
 
-            IRegistryKey hklm = registry.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
+            IRegistryKey hklm = registry.OpenBaseKey( RegistryHive.LocalMachine, RegistryView.Default );
 
             hklm.SetValue( "StringValue", "Hello World" );
             hklm.SetValue( "MultiStringValue", new string[] { "a", "b", "c" } );
@@ -79,20 +76,20 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
         [TestMethod]
         public void InMemoryRegistryKey_Subkey_Properties_and_Methods() {
 
-            IRegistry registry = new InMemoryRegistry(RegistryView.Registry64);
+            IRegistry registry = new InMemoryRegistry( RegistryView.Registry64 );
 
-            IRegistryKey hklm = registry.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
+            IRegistryKey hklm = registry.OpenBaseKey( RegistryHive.LocalMachine, RegistryView.Default );
 
-            IRegistryKey key01 = hklm.CreateSubKey( @"Software", true);
-            IRegistryKey key02 = hklm.CreateSubKey( @"Software\Microsoft", true);
+            IRegistryKey key01 = hklm.CreateSubKey( @"Software", true );
+            IRegistryKey key02 = hklm.CreateSubKey( @"Software\Microsoft", true );
 
-            IRegistryKey key03 = hklm.CreateSubKey(@"SYSTEM\CurrentControlSet", false);
+            IRegistryKey key03 = hklm.CreateSubKey( @"SYSTEM\CurrentControlSet", false );
             Assert.IsInstanceOfType( key03, typeof( ReadOnlyInMemoryRegistryKey ) );
 
-            IRegistryKey key04 = hklm.OpenSubKey( @"SYSTEM\CurrentControlSet", true);
+            IRegistryKey key04 = hklm.OpenSubKey( @"SYSTEM\CurrentControlSet", true );
             Assert.IsInstanceOfType( key04, typeof( InMemoryRegistryKey ) );
 
-            IRegistryKey key05 = hklm.OpenSubKey( @"Software", false);
+            IRegistryKey key05 = hklm.OpenSubKey( @"Software", false );
             Assert.IsInstanceOfType( key05, typeof( ReadOnlyInMemoryRegistryKey ) );
 
             // Delete Subkey addressed over 2 levels
@@ -102,7 +99,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
             // TODO: Validate this behavior with MS implementation
 
             // Create a deeper tree first.
-            IRegistryKey key06 = hklm.CreateSubKey( @"SOFTWARE\Classes\Directory\shellEx\ContextMenuHandlers\MyHandler");
+            IRegistryKey key06 = hklm.CreateSubKey( @"SOFTWARE\Classes\Directory\shellEx\ContextMenuHandlers\MyHandler" );
 
             // Now delete part of the tree, addressed over multiple levels.
             hklm.DeleteSubKeyTree( @"SOFTWARE\Classes\Directory\shellEx" );

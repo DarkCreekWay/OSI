@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 using Win32 = Microsoft.Win32;
 
@@ -12,11 +13,13 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry {
 
         Win32.RegistryKey _win32RegistryKey;
         bool _writable = false;
+        bool _disposed = false;
 
         /// <summary>
         /// Initializes a new instance of the RegistryKey class.
         /// </summary>
         protected internal RegistryKey( Win32.RegistryKey win32RegistryKey, bool writable ) {
+
             Debug.Assert( win32RegistryKey != null );
             _win32RegistryKey = win32RegistryKey;
             _writable = writable;
@@ -48,24 +51,28 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry {
 
         /// <inheritdoc/>
         public IRegistryKey OpenSubKey( string name ) {
+
             Win32.RegistryKey key = _win32RegistryKey.OpenSubKey( name );
             return key == null ? null : new RegistryKey( key, false );
         }
 
         /// <inheritdoc/>
         public IRegistryKey OpenSubKey( string name, bool writable ) {
+
             Win32.RegistryKey key = _win32RegistryKey.OpenSubKey( name, writable );
             return key == null ? null : new RegistryKey( key, writable );
         }
 
         /// <inheritdoc/>
         public IRegistryKey CreateSubKey( string subkey ) {
+
             Win32.RegistryKey key = _win32RegistryKey.CreateSubKey( subkey );
             return new RegistryKey( key, true );
         }
 
         /// <inheritdoc/>
         public IRegistryKey CreateSubKey( string subkey, bool writable ) {
+
             Win32.RegistryKey key = _win32RegistryKey.CreateSubKey( subkey, writable );
             return new RegistryKey( key, writable );
         }
@@ -104,7 +111,25 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry {
         public void DeleteValue( string name, bool throwOnMissingValue ) => _win32RegistryKey.DeleteValue( name, throwOnMissingValue );
 
         /// <inheritdoc/>
-        public void Dispose() => _win32RegistryKey.Dispose();
+        public void Dispose() {
+
+            Dispose( true );
+            GC.SuppressFinalize( this );
+        }
+
+        /// <inheritdoc/>
+        protected virtual void Dispose( bool disposing ) {
+
+            if( _disposed ) {
+                return;
+            }
+
+            if( disposing ) {
+                _win32RegistryKey.Dispose();
+            }
+
+            _disposed = true;
+        }
 
         /// <inheritdoc/>
         public string[] GetValueNames() => _win32RegistryKey.GetValueNames();

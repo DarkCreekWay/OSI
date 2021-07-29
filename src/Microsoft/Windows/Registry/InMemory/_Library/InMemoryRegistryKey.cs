@@ -147,7 +147,6 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
             return writable ? current : new ReadOnlyInMemoryRegistryKey( current ) as IRegistryKey;
         }
 
-
         /// <inheritdoc/>
         public void DeleteSubKey( string subkey ) => DeleteSubKey( subkey, true );
 
@@ -170,6 +169,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
                     if( !throwOnMissingSubKey ) {
                         return;
                     }
+
                     throw new ArgumentException( $"The Subkey parameter {subkey} does not specify a valid registry key" );
                 }
 
@@ -182,6 +182,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
                 if( !throwOnMissingSubKey ) {
                     return;
                 }
+
                 throw new ArgumentException( $"The subkey parameter {subkey} does not specify a valid registry key" );
             }
 
@@ -189,7 +190,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
                 throw new InvalidOperationException( $"The specified subkey {subkey} has child subkeys." );
             }
 
-            current._keys.Remove( key );
+            _ = current._keys.Remove( key );
 
         }
 
@@ -221,6 +222,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
                     if( !throwOnMissingSubKey ) {
                         return;
                     }
+
                     throw new ArgumentException( $"The Subkey parameter {subkey} does not specify a valid registry key" );
                 }
 
@@ -237,7 +239,8 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
 
                 throw new ArgumentException( $"The subkey parameter {subkey} does not specify a valid registry key" );
             }
-            current._keys.Remove( key );
+
+            _ = current._keys.Remove( key );
 
         }
 
@@ -278,7 +281,8 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
         /// <inheritdoc/>
         public object GetValue( string name, object defaultValue, RegistryValueOptions options ) {
 
-            bool doNotExpand = false;
+            bool doNotExpand;
+
             switch( options ) {
                 case RegistryValueOptions.None:
                     doNotExpand = false;
@@ -317,7 +321,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
 
             string key = GetValueKey( name );
 
-            if( true == _values.TryGetValue( key, out RegistryValue registryValue ) ) {
+            if( _values.TryGetValue( key, out RegistryValue registryValue ) ) {
                 return registryValue.Kind;
             }
 
@@ -342,13 +346,13 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
                 throw new ArgumentException( $"The specified registry-value {name} does not exist." );
             }
             else {
-                _values.Remove( key );
+                _ = _values.Remove( key );
             }
         }
 
         #endregion
 
-        #region Common Mathods
+        #region Common Methods
 
         /// <inheritdoc/>
         public void Close() {
@@ -362,7 +366,13 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
 
         /// <inheritdoc/>
         public void Dispose() {
-            // We have nothing to dispose, but need to implement the method to fullfill the interface. So it is ok to implement it like this
+            Dispose( true );
+            GC.SuppressFinalize( this );
+        }
+
+        /// <inheritdoc/>
+        protected virtual void Dispose( bool disposing ) {
+            // Nothing to dispose.
         }
 
         #endregion
@@ -390,7 +400,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
         /// <remarks>
         /// This guarantees accessibility of a reg-value in an case-insensitive way
         /// </remarks>
-        string GetValueKey( string name ) {
+        static string GetValueKey( string name ) {
 
             return name?.ToLowerInvariant() ?? ""; // Coalesce operator ensures, we also get a valid key for the default value, which can be addressed by null or "" as name
         }
@@ -415,8 +425,9 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
 
             if( value is Array ) {
 
-                if( value is byte[] )
+                if( value is byte[] ) {
                     return RegistryValueKind.Binary;
+                }
 
                 if( value is string[] ) {
                     return RegistryValueKind.MultiString;
@@ -455,29 +466,10 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
             return sb.ToString( 0, capacity - 1 );
         }
 
-        /// <inheritdoc/>
-        public IEnumerable<IRegistryKey> Keys {
-            get {
-                foreach( IRegistryKey key in _keys.Values ) {
-                    yield return key;
-                }
-            }
-        }
-
-        /// <inheritdoc/>
-        public IEnumerable<RegistryValue> Values {
-            get {
-                foreach( RegistryValue value in _values.Values ) {
-                    yield return value;
-                }
-            }
-        }
-#if DEBUG
         [DebuggerBrowsable( DebuggerBrowsableState.Never )]
         string DebuggerDisplay {
             get => $"{Name}, Keys: {SubKeyCount}, Values: {ValueCount}, Writable: true";
         }
-#endif
 
         #region Internal Classes
 
@@ -485,7 +477,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
         /// Internal class for managing a name/value pair.
         /// </summary>
         [DebuggerDisplay( "{DebuggerDisplay,nq}" )]
-        public class RegistryValue {
+        class RegistryValue {
 
             /// <summary>
             /// The name.
@@ -504,7 +496,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
 
             [DebuggerBrowsable( DebuggerBrowsableState.Never )]
             string DebuggerDisplay {
-                get => $"{( Name == "" ? "(Default)" : Name )} = {Value}, [{Kind}]";
+                get => $"{( string.IsNullOrEmpty( Name ) ? "(Default)" : Name )} = {Value}, [{Kind}]";
             }
         }
 

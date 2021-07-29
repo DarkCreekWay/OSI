@@ -21,13 +21,9 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry {
         /// <returns>The value for a given name of the RegistryKey, when it exists.. Otherwise,the defaultValue gets returned.</returns>
         public static object GetValue( this IRegistry registry, RegistryHive hive, RegistryView view, string subkey, string name, object defaultValue ) {
 
-            using ( IRegistryKey hiveKey = registry.OpenBaseKey( hive, view ) ) {
-                using ( IRegistryKey subRegKey = hiveKey.OpenSubKey( subkey ) ) {
-                    if ( null == subRegKey ) {
-                        throw new NotImplementedException();
-                    }
-
-                    return subRegKey.GetValue( name, defaultValue );
+            using( IRegistryKey hiveKey = registry.OpenBaseKey( hive, view ) ) {
+                using( IRegistryKey subRegKey = hiveKey.OpenSubKey( subkey ) ) {
+                    return null == subRegKey ? throw new NotImplementedException() : subRegKey.GetValue( name, defaultValue );
                 }
             }
         }
