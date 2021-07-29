@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>Microsoft Windows Registry Library</AssemblyTitle>
-    <Version>1.0.0.6</Version>
+    <Version>1.0.0.7</Version>
     <Description>Provides abstactions and a default implementation for accessing the Microsoft Windows Registry Service</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>

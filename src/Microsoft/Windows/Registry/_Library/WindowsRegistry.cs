@@ -8,6 +8,9 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry {
     /// <remarks>
     /// <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.win32.registry">Registry Class</a>
     /// </remarks>
+#if NET5_0_OR_GREATER
+    [System.Runtime.Versioning.SupportedOSPlatform( "windows" )]
+#endif
     public class WindowsRegistry
     : IRegistry {
 

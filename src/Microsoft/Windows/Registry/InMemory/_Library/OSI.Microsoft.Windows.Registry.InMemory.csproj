@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <AssemblyTitle>InMemory version of the Microsoft Windows Registry</AssemblyTitle>
-    <Version>1.0.0.6</Version>
+    <Version>1.0.0.7</Version>
     <Description>The InMemory Registry implementation makes access and manipulation of the Registry testable.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>

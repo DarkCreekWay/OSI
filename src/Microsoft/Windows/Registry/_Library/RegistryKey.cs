@@ -8,6 +8,9 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry {
     /// <summary>
     /// Represents a key-level node in the Windows registry.
     /// </summary>
+#if NET5_0_OR_GREATER
+    [System.Runtime.Versioning.SupportedOSPlatform( "windows" )]
+#endif
     public class RegistryKey
     : IRegistryKey {
 

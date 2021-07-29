@@ -8,6 +8,9 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry {
 
     [TestClass]
     [TestCategory( "OSI.Microsoft.Windows.Registry" )]
+#if NET5_0_OR_GREATER
+    [System.Runtime.Versioning.SupportedOSPlatform( "windows" )]
+#endif
     public class Win32_Registry_Tests {
 
         [TestMethod]
