@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net48;net472</TargetFrameworks>
+    <TargetFrameworks>net5;netcoreapp3.1;net48;net472</TargetFrameworks>
     <AssemblyName>DarkCreekWay.OSI.Microsoft.Windows.Registry</AssemblyName>
     <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.Registry</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup>
     <AssemblyTitle>Microsoft Windows Registry Library</AssemblyTitle>
-    <Version>1.0.0.5</Version>
+    <Version>1.0.0.6</Version>
     <Description>Provides abstactions and a default implementation for accessing the Microsoft Windows Registry Service</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
@@ -16,13 +16,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0">
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0">
       <PrivateAssets>runtime</PrivateAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="readme.md" Pack="true" PackagePath="\"/>
+    <None Include="readme.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net48;net472</TargetFrameworks>
+    <TargetFrameworks>net5;netcoreapp3.1;net48;net472</TargetFrameworks>
     <AssemblyName>DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory</AssemblyName>
     <RootNamespace>DarkCreekWay.Microsoft.Windows.Registry.InMemory</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup>
     <AssemblyTitle>InMemory version of the Microsoft Windows Registry</AssemblyTitle>
-    <Version>1.0.0.5</Version>
+    <Version>1.0.0.6</Version>
     <Description>The InMemory Registry implementation makes access and manipulation of the Registry testable.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
