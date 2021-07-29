@@ -1,4 +1,4 @@
-# DarkCreekWay's Operating System Integration Framework (DarkCreekWay/OSI)
+# DarkCreekWay's Operating System Integration Framework
 
 Using operating system specific functions from .NET is a challenge on its own
 and usually requires a lot of Interop code.
