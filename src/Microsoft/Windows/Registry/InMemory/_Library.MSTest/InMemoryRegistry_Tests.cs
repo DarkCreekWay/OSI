@@ -5,6 +5,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
     [TestClass]
     [TestCategory( "OSI.Microsoft.Windows.Registry" )]
     [TestCategory( "OSI.Microsoft.Windows.Registry.InMemory" )]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage( "Style", "IDE0059:Remove unnecessary value assignment", Justification = "Not relevant for Unit Tests" )]
     public class InMemoryRegistry_Tests {
 
         [TestMethod]
