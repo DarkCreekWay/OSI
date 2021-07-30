@@ -1,4 +1,4 @@
-# Microsoft Windows Registry OSI
+# DarkCreekWay's Registry packages for Microsoft Windows
 
 The implementation of .NET for working with the Microsoft Windows Registry Service
 is not really suited well for dependency injection and mocking scenarios.
