@@ -405,7 +405,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
             return name?.ToLowerInvariant() ?? ""; // Coalesce operator ensures, we also get a valid key for the default value, which can be addressed by null or "" as name
         }
 
-        string GetSubkeyKey( string key ) {
+        static string GetSubkeyKey( string key ) {
             return key.ToLowerInvariant();
         }
 
@@ -417,7 +417,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
         /// <remarks>
         /// <a href="https://referencesource.microsoft.com/#mscorlib/microsoft/win32/registrykey.cs,c23479cd45b3f448"> CalculateValueKind(Object) - Microsoft .NET Framework Reference Source</a>
         /// </remarks>
-        RegistryValueKind GetValueKind( object value ) {
+        static RegistryValueKind GetValueKind( object value ) {
 
             if( value is int ) {
                 return RegistryValueKind.DWord;

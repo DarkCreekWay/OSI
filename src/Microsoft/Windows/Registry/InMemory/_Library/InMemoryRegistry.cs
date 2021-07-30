@@ -69,7 +69,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory {
             }
         }
 
-        string GetNameforHive( RegistryHive hive ) {
+        static string GetNameforHive( RegistryHive hive ) {
 
             switch( hive ) {
 

@@ -12,6 +12,7 @@
     /// <a href="https://source.dot.net/#Microsoft.Win32.Registry/Microsoft/Win32/RegistryView.cs">RegistryView.cs - .NET Core Source</a>
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage( "Design", "CA1027:Mark enums with FlagsAttribute" )]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage( "CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "False Postive triggered by suppression of Rule CA1027" )]
     public enum RegistryView {
 
         /// <summary>
