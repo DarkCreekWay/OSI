@@ -4,8 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 
-# Keep time-tracking private
-pmo/devlog.md
+# Exclude local PMO assets
+/!pmo/
 
 # User-specific files
 *.rsuser
