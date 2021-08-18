@@ -17,9 +17,6 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel {
     /// <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.comunregisterfunctionattribute"> ComUnregisterFunctionAttribute Class - Microsoft Docs</a>
     /// </remarks>
 
-#if NET5_0_OR_GREATER
-    [System.Runtime.Versioning.SupportedOSPlatform( "windows" )]
-#endif
     public class ComponentRegistrationManager {
 
         const string s_CLSIDRegKeyName = @"SOFTWARE\Classes\CLSID";
