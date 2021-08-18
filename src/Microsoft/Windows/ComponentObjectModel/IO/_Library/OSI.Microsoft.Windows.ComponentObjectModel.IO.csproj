@@ -15,11 +15,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel" Version="0.0.1.5-Alpha.1" />
     <PackageReference Include="System.Reflection.Metadata" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\_Library\OSI.Microsoft.Windows.ComponentObjectModel.csproj" />
   </ItemGroup>
 
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
