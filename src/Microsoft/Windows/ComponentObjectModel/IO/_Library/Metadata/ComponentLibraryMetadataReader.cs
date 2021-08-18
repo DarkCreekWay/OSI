@@ -47,7 +47,6 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Metadata {
         /// <value>Defaults to <see cref="ComponentServerType.Undefined"/></value>
         protected virtual ComponentServerType FallbackServerType => ComponentServerType.Undefined;
 
-
         /// <summary>
         /// Returns an implementing type of the <see cref="ICustomAttributeTypeProvider{TType}"/> interface
         /// </summary>

@@ -23,6 +23,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{903184C5-6B17-4769-9D37-D80E4EEC701B}"
 	ProjectSection(SolutionItems) = preProject
 		src\.editorconfig = src\.editorconfig
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSI.Microsoft.Windows.Registry.MSTest", "src\Microsoft\Windows\Registry\_Library.MSTest\OSI.Microsoft.Windows.Registry.MSTest.csproj", "{592F751D-29F0-48EC-8B6B-B7317D2B01A7}"
@@ -56,6 +57,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore30Component", "src\Microsoft\Windows\ComponentObjectModel\IO\Test.Assets\NetCore30Component\NetCore30Component.csproj", "{DB416957-CA0F-47F0-A941-B6526869FD69}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore31Component", "src\Microsoft\Windows\ComponentObjectModel\IO\Test.Assets\NetCore31Component\NetCore31Component.csproj", "{5E823BFF-7F64-45D7-8939-79FD1F377510}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shell", "Shell", "{89F8CA14-4377-4210-A29F-3622A8CC4552}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSI.Microsoft.Windows.ComponentObjectModel.Shell", "src\Microsoft\Windows\ComponentObjectModel\Shell\_Library\OSI.Microsoft.Windows.ComponentObjectModel.Shell.csproj", "{822AD258-081B-40B4-829A-91FA0BC5F5BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSI.Microsoft.Windows.ComponentObjectModel.Shell.MSTest", "src\Microsoft\Windows\ComponentObjectModel\Shell\_Library.MSTest\OSI.Microsoft.Windows.ComponentObjectModel.Shell.MSTest.csproj", "{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -169,6 +176,22 @@ Global
 		{5E823BFF-7F64-45D7-8939-79FD1F377510}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E823BFF-7F64-45D7-8939-79FD1F377510}.Release|x64.ActiveCfg = Release|Any CPU
 		{5E823BFF-7F64-45D7-8939-79FD1F377510}.Release|x64.Build.0 = Release|Any CPU
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC}.Debug|x64.Build.0 = Debug|Any CPU
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC}.Release|x64.ActiveCfg = Release|Any CPU
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC}.Release|x64.Build.0 = Release|Any CPU
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}.Debug|x64.Build.0 = Debug|Any CPU
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}.Release|x64.ActiveCfg = Release|Any CPU
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -193,6 +216,9 @@ Global
 		{A9211E67-3FE7-4219-BE1D-0FC362A4C269} = {3E953985-ACB0-48DC-BC2D-62EF7C63E452}
 		{DB416957-CA0F-47F0-A941-B6526869FD69} = {3E953985-ACB0-48DC-BC2D-62EF7C63E452}
 		{5E823BFF-7F64-45D7-8939-79FD1F377510} = {3E953985-ACB0-48DC-BC2D-62EF7C63E452}
+		{89F8CA14-4377-4210-A29F-3622A8CC4552} = {A423F35B-EEC4-4735-9C75-9F553E31C096}
+		{822AD258-081B-40B4-829A-91FA0BC5F5BC} = {89F8CA14-4377-4210-A29F-3622A8CC4552}
+		{4A7A4773-2BDA-4F7C-9A57-2CF876DFDDA3} = {89F8CA14-4377-4210-A29F-3622A8CC4552}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84C05060-E1F7-4C6C-91DB-E0AA4AF698D5}
