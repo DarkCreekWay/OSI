@@ -135,7 +135,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Shell.Native {
 
         /// <summary>
         /// The attributes of an item or folder have changed.
-        /// <seealso cref=">SHCNF.IDLIST"/> or <seealso cref="SHCNF.PATH"/> must be specified in uFlags.
+        /// <seealso cref="SHCNF.IDLIST"/> or <seealso cref="SHCNF.PATH"/> must be specified in uFlags.
         /// dwItem1 contains the item or folder that has changed.
         /// dwItem2 is not used and should be NULL.
         /// </summary>
@@ -146,7 +146,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Shell.Native {
 
         /// <summary>
         /// The contents of an existing folder have changed, but the folder still exists and has not been renamed.
-        /// <seealso cref=">SHCNF.IDLIST"/> or <seealso cref="SHCNF.PATH"/> must be specified in uFlags.
+        /// <seealso cref="SHCNF.IDLIST"/> or <seealso cref="SHCNF.PATH"/> must be specified in uFlags.
         /// dwItem1 contains the folder that has changed.
         /// dwItem2 is not used and should be NULL.
         /// If a folder has been created, deleted, or renamed, use <seealso cref="SHCNE.MKDIR"/>, <seealso cref="SHCNE.RMDIR"/>, or <seealso cref="SHCNE.RENAMEFOLDER"/>, respectively.
@@ -158,7 +158,7 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Shell.Native {
 
         /// <summary>
         /// An existing item (a folder or a nonfolder) has changed, but the item still exists and has not been renamed.
-        /// <seealso cref=">SHCNF.IDLIST"/> or <seealso cref="SHCNF.PATH"/> must be specified in uFlags.
+        /// <seealso cref="SHCNF.IDLIST"/> or <seealso cref="SHCNF.PATH"/> must be specified in uFlags.
         /// dwItem1 contains the item that has changed.
         /// dwItem2 is not used and should be NULL.
         /// If a nonfolder item has been created, deleted, or renamed, use <seealso cref="SHCNE.CREATE"/>, <seealso cref="SHCNE.DELETE"/>, or <seealso cref="SHCNE.RENAMEITEM"/>, respectively, instead.
