@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>NetCore21NoComponent</AssemblyName>
+    <RootNamespace>DarkCreekWay</RootNamespace>
+    <!--Not supported by .NET Core 2.1 - Uncomment for verification-->
+    <!--<EnableComHosting>true</EnableComHosting>-->
+  </PropertyGroup>
+
+</Project>

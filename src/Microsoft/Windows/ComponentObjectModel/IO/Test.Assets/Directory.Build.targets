@@ -1,0 +1,24 @@
+<Project>
+  <Target Name="CopyComponentToMSTest" AfterTargets="AfterBuild">
+
+    <ItemGroup>
+      <ComponentSourceFiles Include="$(TargetDir)**\*.*"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+      <ComponentTargetPath>$(SolutionDir)\src\Microsoft\Windows\ComponentObjectModel\IO\_Library.MSTest\Assets\$(ProjectName)</ComponentTargetPath>
+    </PropertyGroup>
+
+    <MakeDir
+      Directories="$(ComponentTargetPath)"
+      ContinueOnError="true"
+    />
+
+    <Copy
+      SourceFiles="@(ComponentSourceFiles)"
+      DestinationFolder="$(ComponentTargetPath)\%(RecursiveDir)"
+      OverwriteReadOnlyFiles="true"
+      SkipUnchangedFiles="true"
+    />
+  </Target>
+</Project>

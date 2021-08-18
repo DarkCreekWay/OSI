@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <EnableComHosting>true</EnableComHosting>
+    <AssemblyName>NetCore31Component</AssemblyName>
+    <RootNamespace>DarkCreekWay</RootNamespace>
+    <RuntimeFrameworkVersion>3.1.8</RuntimeFrameworkVersion>
+  </PropertyGroup>
+
+</Project>
