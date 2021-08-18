@@ -30,6 +30,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,10 +54,10 @@
     <Compile Include="StaticClass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\_Library\OSI.Microsoft.Windows.ComponentObjectModel.csproj">
-      <Project>{ee60bbaf-b917-4aff-bd7a-3566b6b55d43}</Project>
-      <Name>OSI.Microsoft.Windows.ComponentObjectModel</Name>
-    </ProjectReference>
+    <PackageReference Include="DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel">
+      <Version>0.0.1.5-Alpha.2</Version>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
