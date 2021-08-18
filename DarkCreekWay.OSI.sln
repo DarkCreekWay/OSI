@@ -28,6 +28,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSI.Microsoft.Windows.Registry.MSTest", "src\Microsoft\Windows\Registry\_Library.MSTest\OSI.Microsoft.Windows.Registry.MSTest.csproj", "{592F751D-29F0-48EC-8B6B-B7317D2B01A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComponentObjectModel", "ComponentObjectModel", "{A423F35B-EEC4-4735-9C75-9F553E31C096}"
+	ProjectSection(SolutionItems) = preProject
+		src\Microsoft\Windows\ComponentObjectModel\readme.md = src\Microsoft\Windows\ComponentObjectModel\readme.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSI.Microsoft.Windows.ComponentObjectModel", "src\Microsoft\Windows\ComponentObjectModel\_Library\OSI.Microsoft.Windows.ComponentObjectModel.csproj", "{EE60BBAF-B917-4AFF-BD7A-3566B6B55D43}"
 EndProject
