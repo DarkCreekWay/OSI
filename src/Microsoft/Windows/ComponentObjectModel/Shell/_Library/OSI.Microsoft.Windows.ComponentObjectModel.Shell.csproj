@@ -6,7 +6,6 @@
     <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Shell</RootNamespace>
   </PropertyGroup>
 
-  <Import Project="$(SolutionDir)\src\Nuget.msbuild" />
 
   <PropertyGroup>
     <AssemblyTitle>Microsoft Windows COM Shell Support</AssemblyTitle>
@@ -19,5 +18,7 @@
   <ItemGroup>
     <PackageReference Include="DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel" Version="0.0.1.5-Alpha.1" />
   </ItemGroup>
+
+  <Import Project="$(SolutionDir)\.nuget\nuget.local.targets" />
 
 </Project>
