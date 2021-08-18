@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5;netcoreapp3.1;net48;net472</TargetFrameworks>
+    <AssemblyName>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Shell</AssemblyName>
+    <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Shell</RootNamespace>
+  </PropertyGroup>
+
+  <Import Project="$(SolutionDir)\src\Nuget.msbuild" />
+
+  <PropertyGroup>
+    <AssemblyTitle>Microsoft Windows COM Shell Support</AssemblyTitle>
+    <Description>Operating System Integration Library for Microsoft Windows COM Shell </Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>Integration;Microsoft;Windows;Component Object Model;COM;Shell</PackageTags>
+    <Version>0.0.1.5-Alpha.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel" Version="0.0.1.5-Alpha.1" />
+  </ItemGroup>
+
+</Project>
