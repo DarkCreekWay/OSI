@@ -10,6 +10,9 @@ namespace DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Shell {
     /// <summary>
     /// Provides functions for managing shell extensions
     /// </summary>
+#if NET5_0_OR_GREATER
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
+#endif
     public class ShellExtensionManager {
 
         IRegistry _registry;
