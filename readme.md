@@ -1,6 +1,6 @@
 # DarkCreekWay's OSI Framework (DarkCreekWay/OSI)
 
-> OSI is the acronym of **O**perating **S**ystem **I**ntegration
+> OSI is the acronym for **O**perating **S**ystem **I**ntegration
 
 Using operating system specific functions from .NET is a challenge on its own
 and usually requires a lot of Interop code.
@@ -14,6 +14,7 @@ fully implemented wrappers of OS specific features.
 
 ## OSI for Microsoft Windows
 
+* [Microsoft Component Object Model (COM)](./src/Microsoft/Windows/ComponentObjectModel/readme.md)
 * [Microsoft Windows Registry](./src/Microsoft/Windows/Registry/readme.md)
 
 ## OSI for Linux

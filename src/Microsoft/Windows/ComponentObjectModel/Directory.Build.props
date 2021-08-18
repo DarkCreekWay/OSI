@@ -1,0 +1,21 @@
+<Project>
+  <!-- Check https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build for details -->
+
+ <PropertyGroup>
+    <Product>DarkCreekWay's Operating System Integration Framework</Product>
+    <Authors>DarkCreekWay</Authors>
+    <Copyright>Copyright © DarkCreekWay 2020</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/darkcreekway/OSI.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <!-- Enforce XML comments on public members on common projects (excluding MSTest projects)-->
+  <PropertyGroup Condition="'$(MSBuildProjectName.EndsWith(`.MSTest`))'=='false'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarningsAsErrors>;NU1605;CS1591</WarningsAsErrors>
+  </PropertyGroup>
+
+</Project>

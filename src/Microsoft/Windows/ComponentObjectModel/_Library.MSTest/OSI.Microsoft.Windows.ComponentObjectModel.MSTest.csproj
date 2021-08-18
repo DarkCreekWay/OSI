@@ -1,18 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net5;netcoreapp3.1;net48;net472</TargetFrameworks>
-    <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.Registry</RootNamespace>
-    <AssemblyName>DarkCreekWay.OSI.Microsoft.Windows.Registry.MSTest</AssemblyName>
+    <AssemblyName>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.MSTest</AssemblyName>
+    <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel</RootNamespace>
     <IsPackable>false</IsPackable>
+    <Version>0.0.1.1</Version>
   </PropertyGroup>
-
-  <PropertyGroup>
-    <AssemblyTitle>MSTest cases for Microsoft Windows Registry Library</AssemblyTitle>
-    <Description>MSTest based unit test cases for the Microsoft Windows Registry Library</Description>
-  </PropertyGroup>
-
   <ItemGroup>
+    <PackageReference Include="DarkCreekWay.OSI.Microsoft.Windows.Registry" Version="1.0.0.7" />
+    <PackageReference Include="DarkCreekWay.OSI.Microsoft.Windows.Registry.InMemory" Version="1.0.0.7" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.5" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.5" />
@@ -21,9 +18,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\_Library\OSI.Microsoft.Windows.Registry.csproj" />
+    <ProjectReference Include="..\_Library\OSI.Microsoft.Windows.ComponentObjectModel.csproj" />
   </ItemGroup>
-
 </Project>

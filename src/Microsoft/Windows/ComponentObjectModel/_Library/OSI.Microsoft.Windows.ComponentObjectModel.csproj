@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net48;net472</TargetFrameworks>
+    <AssemblyName>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel</AssemblyName>
+    <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel</RootNamespace>
+  </PropertyGroup>
+
+
+  <PropertyGroup>
+    <AssemblyTitle>Microsoft Windows Component Object Model Support</AssemblyTitle>
+    <Description>Operating System Integration Library for Microsoft Windows Component Object Model</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>Integration;Microsoft;Windows;Component Object Model;COM</PackageTags>
+    <Version>0.0.1.5-Alpha.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DarkCreekWay.OSI.Microsoft.Windows.Registry" Version="1.0.0.7" />
+    <PackageReference Include="System.Reflection.Metadata" Version="5.0.0" />
+  </ItemGroup>
+
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+
+</Project>

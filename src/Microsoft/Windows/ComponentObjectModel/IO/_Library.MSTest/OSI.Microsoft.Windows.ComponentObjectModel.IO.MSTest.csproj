@@ -1,15 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5;netcoreapp3.1;net48;net472</TargetFrameworks>
-    <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.Registry</RootNamespace>
-    <AssemblyName>DarkCreekWay.OSI.Microsoft.Windows.Registry.MSTest</AssemblyName>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <AssemblyTitle>MSTest cases for Microsoft Windows Registry Library</AssemblyTitle>
-    <Description>MSTest based unit test cases for the Microsoft Windows Registry Library</Description>
+      <TargetFrameworks>netcoreapp3.1;net48;net472</TargetFrameworks>
+      <AssemblyName>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.IO.MSTest</AssemblyName>
+      <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel</RootNamespace>
+      <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\_Library\OSI.Microsoft.Windows.Registry.csproj" />
+    <ProjectReference Include="..\_Library\OSI.Microsoft.Windows.ComponentObjectModel.IO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
   </ItemGroup>
 
 </Project>
