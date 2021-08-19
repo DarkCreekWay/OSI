@@ -6,10 +6,9 @@
     <RootNamespace>DarkCreekWay.OSI.Microsoft.Windows.ComponentObjectModel.Shell</RootNamespace>
   </PropertyGroup>
 
-
   <PropertyGroup>
-    <AssemblyTitle>Microsoft Windows COM Shell Support</AssemblyTitle>
-    <Description>Operating System Integration Library for Microsoft Windows COM Shell </Description>
+    <AssemblyTitle>COM Shell OSI Library</AssemblyTitle>
+    <Description>COM Shell - Operating System Integration Library for Microsoft Windows</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Integration;Microsoft;Windows;Component Object Model;COM;Shell</PackageTags>
     <Version>0.0.1.5-Alpha.1</Version>
